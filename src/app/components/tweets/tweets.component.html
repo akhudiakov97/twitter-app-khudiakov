@@ -1,0 +1,13 @@
+<app-tweets-filter
+  (searchInput)="getFilteredTweets($event)"
+  [filterType]="filterType"
+>
+</app-tweets-filter>
+<ng-template
+  [ngIf]="tweets.length"
+>
+  <app-tweets-list
+    [tweets]="tweets"
+  >
+  </app-tweets-list>
+</ng-template>
