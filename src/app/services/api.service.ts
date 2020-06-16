@@ -7,7 +7,7 @@ import { TweetsResponse } from '@app/shared/models/tweets-response.constant';
   providedIn: 'root'
 })
 export class ApiService {
-  private rootUrl = 'https://cors-anywhere.herokuapp.com/https://anymind-recruitment-python-backend.adasia.biz';
+  private readonly rootUrl = 'https://cors-anywhere.herokuapp.com/https://anymind-recruitment-python-backend.adasia.biz';
 
   constructor(private http: HttpClient) {
   }
