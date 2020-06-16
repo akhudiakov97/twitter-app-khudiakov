@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy, OnDestroy, ElementRef, Input, Output, ViewChild, EventEmitter } from '@angular/core';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { fromEvent } from 'rxjs';
-import { SubSink } from '@app/shared/utils/subsink.utils';
+import { SubSink } from 'subsink';
 
 @Component({
   selector: 'app-tweets-filter',

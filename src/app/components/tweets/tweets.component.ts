@@ -6,7 +6,7 @@ import { capitalize } from '@app/shared/utils/capitalize.utils';
 import { ApiService } from '@app/services/api.service';
 import { TweetsResponse } from '@app/shared/models/tweets-response.constant';
 import { Tweet } from '@app/shared/models/tweet.constant';
-import { SubSink } from '@app/shared/utils/subsink.utils';
+import { SubSink } from 'subsink';
 
 @Component({
   selector: 'app-tweets',
