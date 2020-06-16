@@ -5,6 +5,7 @@ import { HashtagPipe } from '@app/shared/pipes/hashtag.pipe';
 import { DatePipe } from '@angular/common';
 import { TweetTextPipe } from '@app/shared/pipes/tweet-text.pipe';
 import { TweetsResponse } from '@app/shared/models/tweets-response.constant';
+import { PAGE_SIZE } from '@app/shared/constants/page-size.constant';
 
 @Component({
   selector: 'app-tweets-list',
@@ -24,7 +25,7 @@ export class TweetsListComponent {
 
   @Output() loadTweetsOnPageChange = new EventEmitter<number>();
 
-  readonly pageSize = 10;
+  readonly pageSize = PAGE_SIZE;
   tweets: Tweet[] = [];
   total = 0;
   offset = 0;
