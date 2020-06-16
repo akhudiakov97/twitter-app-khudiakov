@@ -1,17 +1,24 @@
-<div class="row">
-  <div class="input-group col-3">
-    <input
-      #filter
-      aria-describedby="filter-input"
-      class="form-control"
-      placeholder="Search by {{ filterType }}"
-      type="text"
-    >
-    <div class="input-group-append">
+<section
+  class='bg-light tweets-filter'
+>
+  <div class="container tweets-filter-input-area">
+    <div class="row">
+      <h6 class="col-3 tweets-filter-heading">{{filterType}} search</h6>
+    </div>
+    <div class="row">
+      <div class="input-group col-3">
+        <input
+          #filter
+          aria-describedby="filter-input"
+          class="form-control"
+          placeholder="Search by {{ filterType }}"
+          type="text"
+        >
+        <div class="input-group-append">
       <span
+        (click)="onInputClick()"
         class="input-group-text"
         id="filter-input"
-        (click)="onInputClick()"
       >
         <svg
           class="bi bi-search"
@@ -34,6 +41,8 @@
           </path>
         </svg>
       </span>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</section>

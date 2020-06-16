@@ -1,13 +1,14 @@
 <app-tweets-filter
-  (searchInput)="getFilteredTweets($event)"
+  (filterValueChange)="getFilteredTweets($event)"
   [filterType]="filterType"
 >
 </app-tweets-filter>
-<ng-template
-  [ngIf]="tweets.length"
+<ng-container
+  *ngIf="tweetsResponse?.results?.length"
 >
   <app-tweets-list
-    [tweets]="tweets"
+    (loadTweetsOnPageChange)="onTweetsReload($event)"
+    [tweetsResponse]="tweetsResponse"
   >
   </app-tweets-list>
-</ng-template>
+</ng-container>

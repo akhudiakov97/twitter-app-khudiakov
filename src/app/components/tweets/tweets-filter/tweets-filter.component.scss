@@ -1,3 +1,13 @@
-#filter-input {
-  cursor: pointer;
+.tweets-filter {
+  #filter-input {
+    cursor: pointer;
+  }
+
+  &-input-area {
+    padding-top: 24px;
+  }
+
+  &-heading {
+    color: grey;
+  }
 }

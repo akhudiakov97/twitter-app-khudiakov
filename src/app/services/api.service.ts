@@ -12,11 +12,11 @@ export class ApiService {
   constructor(private http: HttpClient) {
   }
 
-  getTweetsByHashTag(hashtag: string): Observable<TweetsResponse> {
-    return this.http.get<TweetsResponse>(`${this.rootUrl}/hashtags/${hashtag}`);
+  getTweetsByHashTag(hashtag: string, offset = 0): Observable<TweetsResponse> {
+    return this.http.get<TweetsResponse>(`${this.rootUrl}/hashtags/${hashtag}?offset=${offset}`);
   }
 
-  getTweetsByUser(user: string): Observable<TweetsResponse> {
-    return this.http.get<TweetsResponse>(`${this.rootUrl}/users/${user}`);
+  getTweetsByUser(user: string, offset = 0): Observable<TweetsResponse> {
+    return this.http.get<TweetsResponse>(`${this.rootUrl}/users/${user}?offset=${offset}`);
   }
 }

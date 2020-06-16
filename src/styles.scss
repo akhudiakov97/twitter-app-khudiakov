@@ -1,4 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
-
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
+
+.nav-tabs {
+  border-bottom: none;
+  padding-bottom: 0;
+
+  .nav-link {
+    color: black;
+
+    &.active {
+      color: #007BFF;
+    }
+  }
+}

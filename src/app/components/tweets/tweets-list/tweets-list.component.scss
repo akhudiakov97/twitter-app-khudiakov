@@ -1,6 +1,14 @@
-.tweet-text {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 50ch;
+.tweets-list {
+  padding: 24px 0;
+
+  &-table {
+    background: #ffff;
+  }
+
+  .tweet-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+  }
 }

@@ -12,10 +12,9 @@ import { SubSink } from 'subsink';
 export class TweetsFilterComponent implements OnInit, OnDestroy {
   @ViewChild('filter', { static: true }) inputRef: ElementRef<HTMLInputElement>;
   @Input() filterType: string;
-  @Output() searchInput = new EventEmitter<string>();
+  @Output() filterValueChange = new EventEmitter<string>();
 
   private subs = new SubSink();
-  private currentFilterValue = '';
 
   constructor() {
   }
@@ -25,10 +24,9 @@ export class TweetsFilterComponent implements OnInit, OnDestroy {
       distinctUntilChanged(),
       debounceTime(200),
     ).subscribe((keyboardEvent) => {
-      const val = (keyboardEvent.target as HTMLInputElement).value;
-      if (val) {
-        this.currentFilterValue = val;
-        this.searchInput.emit(val);
+      const filterValue = (keyboardEvent.target as HTMLInputElement).value;
+      if (filterValue) {
+        this.filterValueChange.emit(filterValue);
       }
     });
   }
@@ -38,8 +36,6 @@ export class TweetsFilterComponent implements OnInit, OnDestroy {
   }
 
   onInputClick(): void {
-    if (this.inputRef.nativeElement.value !== this.currentFilterValue) {
-      this.searchInput.emit(this.inputRef.nativeElement.value);
-    }
+    this.filterValueChange.emit(this.inputRef.nativeElement.value);
   }
 }

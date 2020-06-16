@@ -1,16 +1,22 @@
-<table class="table fixed-table">
-  <tr>
-    <td *ngFor="let config of getTableConfig(tweets[0])" class="{{config.titleClassName}}">{{config.title}}</td>
-  </tr>
-  <ng-container *ngFor="let tweet of tweets">
-    <tr>
-      <td *ngFor="let config of getTableConfig(tweet)" class="{{config.cellClassName}}">{{config.value}}</td>
-    </tr>
-  </ng-container>
-</table>
-<ngb-pagination
-  *ngIf="tweets.length"
-  [(page)]="page"
-  [collectionSize]="tweets.length"
-  [pageSize]="pageSize">
-</ngb-pagination>
+<section class="bg-light tweets-list">
+  <div class="container">
+    <table class="table fixed-table tweets-list-table">
+      <tr>
+        <td *ngFor="let config of getTableConfig(tweets[0])" class="{{config.titleClassName}}">{{config.title}}</td>
+      </tr>
+      <ng-container *ngFor="let tweet of tweets">
+        <tr>
+          <td *ngFor="let config of getTableConfig(tweet)" class="{{config.cellClassName}}">{{config.value}}</td>
+        </tr>
+      </ng-container>
+    </table>
+    <ngb-pagination
+      (pageChange)="onPageChange($event)"
+      *ngIf="tweets.length"
+      [(page)]="page"
+      [collectionSize]="total"
+      [pageSize]="pageSize"
+    >
+    </ngb-pagination>
+  </div>
+</section>

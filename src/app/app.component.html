@@ -1,25 +1,23 @@
 <section class="title-bar container">
   <h4>Angular Twitter</h4>
 </section>
-<section class="bg-light">
-  <section class="container">
-    <ul #nav="ngbNav" class="nav-tabs" ngbNav>
-      <li [ngbNavItem]="1">
-        <a
-          [class.active]="isHashtagBtnActive()"
-          [routerLink]="links.hashtag"
-          ngbNavLink>
-          Hashtag search
-        </a>
-      </li>
-      <li [ngbNavItem]="2">
-        <a [class.active]="isUserBtnActive()"
-           [routerLink]="links.user"
-           ngbNavLink
-        >User search
-        </a>
-      </li>
-    </ul>
-  </section>
+<section class="container">
+  <ul #nav="ngbNav" class="nav-tabs" ngbNav>
+    <li [ngbNavItem]="1">
+      <a
+        [class.active]="isHashtagBtnActive()"
+        [routerLink]="links.hashtag"
+        ngbNavLink>
+        Hashtag search
+      </a>
+    </li>
+    <li [ngbNavItem]="2">
+      <a [class.active]="isUserBtnActive()"
+         [routerLink]="links.user"
+         ngbNavLink
+      >User search
+      </a>
+    </li>
+  </ul>
 </section>
 <router-outlet></router-outlet>
