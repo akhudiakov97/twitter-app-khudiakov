@@ -3,10 +3,10 @@ import { FilterType } from '@app/shared/constants/filter-type.constant';
 import { TwitterRoutingParam } from '@app/shared/constants/twitter-routing-param.constant';
 import { ActivatedRoute } from '@angular/router';
 import { capitalize } from '@app/shared/utils/capitalize.utils';
-import { SubSink } from 'subsink';
 import { ApiService } from '@app/services/api.service';
 import { TweetsResponse } from '@app/shared/models/tweets-response.constant';
 import { Tweet } from '@app/shared/models/tweet.constant';
+import { SubSink } from '@app/shared/utils/subsink.utils';
 
 @Component({
   selector: 'app-tweets',
